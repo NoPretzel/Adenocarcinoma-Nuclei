@@ -7,4 +7,8 @@ A Tensorflow CNN implementation to allow nuclei detection and classification (Ep
 
 Super early right now.
 
+- [x] Structure Matlab data into Tensors
+- [ ] Create Convolutional Model (skeleton somewhat done)
+- [ ] Train Model
+
 1. K. Sirinukunwattana, S.E.A. Raza, Y.W Tsang, I.A. Cree, D.R.J. Snead, N.M. Rajpoot, ‘Locality Sensitive Deep Learning for Detection and Classification of Nuclei in Routine Colon Cancer Histology Images,’ IEEE Transactions on Medical Imaging, 2016 (in press) [PDF]
