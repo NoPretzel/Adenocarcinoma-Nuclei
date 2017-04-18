@@ -5,11 +5,12 @@ import numpy as np
 
 class Histology:
 
-    def __init__(self, image_directory, image_file_type):
+    def __init__(self, image_directory, image_file_type, image_x, image_y):
         self.histology_queue = tf.train.string_input_producer(
             tf.train.match_filenames_once("{}*{}".format(image_directory, image_file_type)))
         self.image_file_type = image_file_type
         self.image_reader = tf.WholeFileReader()
+        self.image_x, self.image_y = image_x, image_y
 
     def size(self):
         self.histology_queue.size()
@@ -20,8 +21,10 @@ class Histology:
         num_preprocess_threads = 1
         min_queue_examples = 256
 
+        image.set_shape((self.image_x, self.image_y, 3))
+
         return tf.train.shuffle_batch(
-            [image, self.get_labels_for_image_tensor(image, file_name.replace("{}".format(self.image_file_type), '.mat'))],
+            [image],
             batch_size=batch_size,
             num_threads=num_preprocess_threads,
             capacity=min_queue_examples + 3 * batch_size,
