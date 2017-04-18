@@ -1,5 +1,5 @@
 # Adenocarcinoma-Nuclei
-Nuclei Detection on Adencarcinoma Cancer Histologies
+Nuclei Detection on Adenocarcinoma Cancer Histologies
 
 >Detection and classification of cell nuclei in histopathology images of cancerous tissue stained with the standard hematoxylin and eosin stain is a challenging task due to cellular heterogeneity. [1]
 
